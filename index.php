@@ -9,7 +9,7 @@
 <body>
     <div class="container">
             <div class="row">
-                <h3>PHP CRUD Grid</h3>
+                <h3>Megaraid CRUD Grid</h3>
             </div>
             <div class="row">
                 <p>
@@ -20,9 +20,6 @@
                       <thead>
                         <tr>
                           <th>Titel</th>
-                          <th>Inhalt</th>
-                          <th>Pro</th>
-                          <th>Contra</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -34,15 +31,14 @@
                        foreach ($pdo->query($sql) as $row) {
                                 echo '<tr>';
                                 echo '<td>'. $row['titel'] . '</td>';
-                                echo '<td>'. $row['inhalt'] . '</td>';
-                                echo '<td>'. $row['pro'] . '</td>';
-                                echo '<td>'. $row['contra'] . '</td>';
                                 echo '<td width=250>';
-                                echo '<a class="btn" href="read.php?id='.$row['id'].'">Read</a>';
+                                echo '<a class="btn" href="read_pro.php?id='.$row['id'].'">Read Pro</a>';
                                 echo ' ';
-                                echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';
+                                echo '<a class="btn" href="read_contra.php?id='.$row['id'].'">Read Contra</a>';
                                 echo ' ';
-                                echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
+                                // echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';
+                                // echo ' ';
+                                // echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
                                 echo '</td>';
                                 echo '</tr>';
                        }
